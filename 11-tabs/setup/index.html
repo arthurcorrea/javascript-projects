@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="styles.css" />
+    
+  </head>
+  <body>
+    <section class="section">
+
+      <div class="title">
+        <h2>Sobre o projeto</h2>
+        <p>
+          Seu funcionamento, importância e aprendizado 
+        </p>
+      </div>
+
+      <div class="about-center section-center">
+
+        <article class="about-img">
+          <img src="./hero-bcg.jpeg" alt="about-picture">
+        </article>
+
+        <article class="about">
+          <!--button container-->
+          <div class="btn-container">
+            <button class="tab-btn active" data-id="funcionamento">Funcionamento</button>
+            <button class="tab-btn" data-id="importancia">Importância</button>
+            <button class="tab-btn" data-id="aprendizado">Aprendizado</button>
+          </div>
+
+          <article class="about-content">
+            <!--single item-->
+            <div class="content active" id="funcionamento">
+              <h4>Funcionamento</h4>
+              <p>
+                Para cada botão é passado um "data-id" e para cada div é passado o id
+                correspondente, fazendo uma ligação entre o botão e a div.
+                Depois disso, é verificado pelo JavaScript, por meio de um addEventListener,
+                o target do evento, e com isso é possível capturar o id que foi clicado.
+                Após ser verificado que o id corresponde à aba, a classe "active" é
+                ativada ou desativada, possibilitando a alternância das abas e dos textos.
+              </p>
+            </div>
+            <!--end single item-->
+  
+            <!--start single item-->
+            <div class="content" id="importancia">
+              <h4>Importância</h4>
+              <p>
+                É um projeto importante, pois é mais uma prática com 
+                monitoramento de eventos, além de usar bastante manipulação 
+                de classes CSS.
+              </p>
+            </div>
+            <!--final single item-->
+  
+            <!--single item-->
+            <div class="content" id="aprendizado">
+              <h4>Aprendizado</h4>
+              <ul>
+                <li>data-id</li>
+                <li>target</li>
+              </ul>
+            </div>
+            <!--end single item-->
+  
+          </article>
+        </article>
+
+      </div>
+    </section>
+    <!-- javascript -->
+    <script src="app.js"></script>
+  </body>
+</html>

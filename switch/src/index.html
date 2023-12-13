@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Fazendo trocas</h1>
+    
+    <section class="container text-center">
+        <!--começando uma row (linha)-->
+        <div class="row">
+            <div class="col m-2 p-3 bg-primary rounded-2">
+                <p>Linha 01 - Coluna 01</p>
+                <button type="button" class="btn btn-info switchBackgroundColor">Trocar cor de fundo</button>
+            </div>
+            <div class="col-sm-5 m-2 p-3 bg-primary-subtle rounded-2">
+                <p>Linha 01 - Coluna 02</p>
+                <button type="button" class="btn btn-light">Trocar cor do botão</button>
+            </div>
+            <div class="col m-2 p-3 bg-secondary rounded-2">
+                <p>Linha 01 - Coluna 03</p>
+                <button type="button" class="btn btn-dark">Trocar cor do texto</button>
+            </div>
+        </div>
+        <!--finalizando uma row (linha)-->
+
+        <!--iniciando uma row(linha)-->
+        <div class="row">
+            <div class="col m-2 p-3 bg-warning rounded-2">
+                <p>Linha 02 - Coluna 01</p>
+                <button type="button" class="btn btn-success">Trocar</button>
+            </div>
+            <div class="col m-2 p-3 bg-success rounded-2">
+                <p>Linha 02 - Coluna 02</p>
+                <button type="button" class="btn btn-danger">Trocar</button>
+            </div>
+        </div>
+        <!--finalizando uma row(linha)-->
+
+        <div class="row">
+            <div class="col-sm-9 m-2 p-3 bg-info rounded-2">
+                <p>Linha 03 - Coluna 01</p>
+                <button type="button" class="btn btn-secondary">Trocar</button>
+            </div>
+            <div class="col m-2 p-3 bg-light rounded-2">
+                <p>Linha 03 - Coluna 02</p>
+                <button type="button" class="btn btn-primary">Trocar</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
