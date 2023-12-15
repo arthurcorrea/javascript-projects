@@ -9,3 +9,7 @@ body {
 .switchBackgroundColor {
     background-color: blueviolet;
 }
+
+.switchColorText {
+    color: yellow !important;
+}
