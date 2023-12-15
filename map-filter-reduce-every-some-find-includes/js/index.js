@@ -1,218 +1,249 @@
-/* ==========================================================================
-   map()
-   ========================================================================== */
+//* ========== map() ==========
 
-/* Dobrar valores
-   ========================================================================== */
+//? ====== dobrando valores ======
+const numbers = [5, 2, 1, 7, 33, 67, 91, 73];
+// nessa função, o map() percorre cada um dos valores do array e dobra cada um
+const doubleNumbers = numbers.map(function(element) {
+   return element * 2
+})
+console.log(doubleNumbers);
 
-const numbers = [ 1, 4, 5, 9, 14, 23 ]
+// fazendo a mesma coisa, mas com arrow function
+const doubleNumbersArrowFunction = numbers.map( element => element * 2)
+console.log(doubleNumbersArrowFunction);
 
-const doubledNumbers = numbers.map( num => num * 2 )
+//? ==============================
 
-// console.log( doubledNumbers )
+//! ============================================================
 
-/* Fahrenheit para Celsius
-   ========================================================================== */
+//? ====== conversor de fahrenheit para celsius ======
+const fahrenheit = [ 60, 121, 0, 32, 103, 53 ]
 
-const fahrenheit = [ 0, 32, 45, 50, 75, 80, 120 ]
+// usando arrow function
+const celsius = fahrenheit.map(element => Math.round(( element - 32 ) * 5 / 9 ))
 
-const celcius = fahrenheit.map( elem => Math.round( ( elem - 32 ) * 5/9 ) )
+console.log(celsius);
 
-// console.log( celcius )
+//? ===========================
 
-
-
-
-
-/* ==========================================================================
-   filter()
-   ========================================================================== */
-
-const yetAnotherArray = [ 2, 3, 4, 5, 4, 12, 19, 7, 2, 5 ]
-
-const uniqueArray = yetAnotherArray.filter( ( elem, index, arr ) => arr.indexOf( elem ) === index)
-
-// console.log( uniqueArray )
+//* ===========================
 
 
 
 
 
-/* ==========================================================================
-   reduce()
-   ========================================================================== */
+//* ========== filter() ==========
+// usado para remover itens de um array de acordo com as condições
+const numeros = [ 3, 6, 1, 4, 8, 12, 18, 19, 6, 3, 9, 10, 13, 4 ]
 
+const numerosNaoRepetidos = numeros.filter((element , index, arr) => arr.indexOf(element) === index);
+
+console.log(`Números não repetidos: ${numerosNaoRepetidos}`);
+
+//* ==============================
+
+
+
+
+
+
+//* ========== reduce() ==========
+// usado para juntar dados de um array
+// no exemplo, foi usado um array de objetos
 const rockets = [
-  { country: "Russia", launches: 32 },
-  { country: "US", launches: 23 },
-  { country: "China", launches: 16 },
-  { country: "Europe", launches: 7 },
-  { country: "India", launches: 4 },
-  { country: "Japan", launches: 3 }
+   { country: "EUA", launches: 14},
+   { country: "Canadá", launches: 18},
+   { country: "Japão", launches: 7},
+   { country: "Angola", launches: 9},
+   { country: "Índia", launches: 4},
+   { country: "China", launches: 8}
 ]
 
-const totalLaunches = rockets.reduce( ( prevVal, elem ) => prevVal + elem.launches, 0 )
+const totalLaunches = rockets.reduce( 
+   (previousValue, element) => previousValue + element.launches, 0);
 
-// console.log( totalLaunches )
+console.log(totalLaunches);
+//* ==============================
 
 
 
 
+//* ========== every() ==========
+// usado para testar se todos os elementos passam pelo teste especificado
+// o every() retorna um resultado boolean
 
-/* ==========================================================================
-   every()
-   ========================================================================== */
+//? verificar se todos os elementos são maiores que 10
+const valores = [ 12, 11, 4, 5, 44, 21, 2, 0, 19 ];
 
-/* Verificar se todos os elementos de um array são maiores que 10
-   ========================================================================== */
+const allAbove10 = valores.every(element => element > 10)
+console.log(allAbove10);
+//? ===================================================
 
-const anotherArray = [ 12, 5, 8, 130, 44 ]
 
-// console.log( anotherArray.every( elem => elem > 10 ) )
-
-/* Verificar se todos são maiores de idade
-   ========================================================================== */
-
-const tchurma = [
-  { id: 12, name: "Frederico", age: 8 },
-  { id: 47, name: "Francisca", age: 7 },
-  { id: 77, name: "Ramon", age: 48 },
-  { id: 85, name: "Zenon", age: 52 }
+//? verificar se todos têm mais de 18 anos
+const turma = [
+   {id: 15, name: "Roberto", age: 19},
+   {id: 11, name: "Roberto", age: 12},
+   {id: 4, name: "Roberto", age: 13},
+   {id: 8, name: "Roberto", age: 22},
+   {id: 10, name: "Roberto", age: 28},
+   {id: 1, name: "Roberto", age: 37},
 ]
 
-// console.log( tchurma.every( p => p.age >= 18 ) )
+console.log(turma.every( pessoa => pessoa.age >= 18 ));
+
+//? ===================================================
+
+//* =============================
 
 
 
 
-
-/* ==========================================================================
-   some()
-   ========================================================================== */
-
-/* Verificar se há algum número primo
-   ========================================================================== */
-
-function isPrime( value ) {
-  for ( let i = 2; i < value; i++ ) {
-    if ( value % i === 0 ) {
-        return false
-    }
-  }
-
-  return value > 1
+//* ========== some() ==========
+// usado para testar se pelo menos um elemento do array passa em um teste específico
+// retorna true se pelo menos um elemento corresponder ao teste
+//? verificar se há algum número primo
+function isPrime(value) {
+   for(let i = 2; i < value; i++) {
+      if(value % i === 0) {
+         return false
+      }
+   }
+   return value > 1
 }
 
-const oneMoreArray = [ 6, 8, 11, 14, 42 ]
+const arrayPrimes = [ 6, 3, 17, 18 ]
 
-// console.log( oneMoreArray.some( isPrime ) )
+console.log(arrayPrimes.some( isPrime ));
+//? ===================================================
 
-/* Verificar por condições em valores/objetos
-   ========================================================================== */
+
+
+//? verificar por condições em valores e objetos
 
 const team = [
-  { id: 12, name: "Topper Harley", pilot: true },
-  { id: 44, name: "Ramada Thompson", pilot: true },
-  { id: 59, name: "Pete Thompson", pilot: false },
-  { id: 122, name: "Kowalski", pilot: false }
+   {id: 11, name: "Arthur", pilot: true},
+   {id: 1, name: "Pedro", pilot: false},
+   {id: 9, name: "Roberto", pilot: false},
+   {id: 17, name: "Yuri", pilot: false},
 ]
 
-// console.log( team.some( person => person.pilot ) )
+console.log( team.some(pessoa => pessoa.pilot) );
+
+//? ===================================================
+
+//* ============================
 
 
 
 
+//* ========== find() ==========
+// usado para procurar por um valor específico
+// o retorno será o primeiro elemento que cumprir a condição
 
-/* ==========================================================================
-   find()
-   ========================================================================== */
-
-/* Pizzas
-   ========================================================================== */
-
+//? usando para encontrar o primeiro elemento que satisfaça a condição
 const pizzas = [
-  "mussarela",
-  "calabresa",
-  "portuguesa",
-  "marguerita"
+   "calabresa",
+   "mussarela",
+   "portuguesa",
+   "marguerita",
 ]
 
-const foundPizza = pizzas.find( p => p.startsWith( "m" ) )
+const foundPizza = pizzas.find(p => p.startsWith("m"))
 
-// console.log( foundPizza )
+console.log(foundPizza); // mussarela (primeiro elemento)
+//? ===================================================
 
-/* Frutas
-   ========================================================================== */
+//? Outro exemplo
 
 const fruits = [
-  { name: "jaca", quantity: 2 },
-  { name: "banana", quantity: 0 },
-  { name: "cereja", quantity: 5 }
+   { name: "Maçã", quantity: 4 },
+   { name: "Pera", quantity: 3 },
+   { name: "Uva", quantity: 9 },
+   { name: "Banana", quantity: 2 },
 ]
 
-const foundFruit = fruits.find( fruit => fruit.name === "cereja" )
+const foundFruit = fruits.find(fruit => fruit.name === 'Pera');
 
-// console.log( foundFruit )
+console.log(foundFruit);
+
+//? ===================================================
+
+//* ============================
 
 
 
+//* ========== includes() ==========
+// usado para retornar se o array possui determinado elemento
+// retorna boolean
+const n = [ 1, 2, 3, 4, 5, 6 ]
 
+console.log(n.includes(2));
 
-/* ==========================================================================
-   includes()
-   ========================================================================== */
-
+//? exemplo mais concreto
 const people = [
-  { id: 11, name: "Adamastor", age: 23, group: "editor" },
-  { id: 47, name: "Joana", age: 28, group: "user" },
-  { id: 85, name: "Mauricio", age: 34, group: "editor" },
-  { id: 97, name: "Lalau", age: 74, group: "admin" }
-]
+   {id: 2, name: "Pedro", age: 66, group: "editor"}, 
+   {id: 9, name: "Yuri", age: 66, group: "author"}, 
+   {id: 20, name: "João", age: 66, group: "admin"}, 
+   {id: 1, name: "Ricardo", age: 66, group: "user"}, 
+];
 
-const filteredUsers = people.filter( p => p.name.includes( "au" ) )
+const filteredUsers = people.filter( p => p.name.includes("ar") );
 
-// console.log( filteredUsers )
-
-
-
+console.log( filteredUsers );
+//* ================================
 
 
-/* ==========================================================================
-   API real!
-   ========================================================================== */
 
+
+
+//* ========== mexendo com API real ==========
 async function getPeople() {
-  const response = await fetch( 'https://randomuser.me/api/?results=10' )
+   const response = await fetch('https://randomuser.me/api/?results=16');
 
-  return response.json()
+   return response.json()
 }
 
-// getPeople().then( data => console.log( data ) )
+getPeople().then( data => console.log(data));
 
-/* Somente mulheres
-   ========================================================================== */
-
+//? retornando apenas mulheres
 getPeople().then( data => {
-  const people = data.results
+   const people = data.results
 
-  // console.log( people.filter( p => p.gender === 'female' ) )
-} )
+   console.log(people.filter(p => p.gender === "female"));
+})
 
-/* Trabalhando com dados
-   ========================================================================== */
-
+//? trabalhando com dados
 getPeople().then( data => {
-  const result = data.results.filter( p => p.dob.age >= 30 )
-  const people = []
+   const result = data.results;
+   const people = [];
 
-  for ( let p of result ) {
-    people.push( {
-      "Nome" : `${ p.name.first } ${ p.name.last }`,
-      "Sexo" : p.gender,
-      "Idade": p.dob.age
-    } )
-  }
+   for(let p of result) {
+      people.push({
+         "Nome": `${p.name.first} ${p.name.last}`,
+         "Sexo": `${p.gender}`,
+         "Idade" :  `${p.dob.age}` 
+      })
+   }
 
-  console.table( people )
-} )
+   console.table(people);
 
+})
+
+//? retornando resultado com pessoas acima de 30 anos
+getPeople().then( data => {
+   // o filtro pode ser aplicado diretamente na consulta
+   const result = data.results.filter(p => p.dob.age > 30);
+   const people = [];
+
+   for(let p of result) {
+      people.push({
+         "Nome": `${p.name.first} ${p.name.last}`,
+         "Sexo": `${p.gender}`,
+         "Idade" :  `${p.dob.age}` 
+      })
+   }
+
+   console.table(people);
+
+})
