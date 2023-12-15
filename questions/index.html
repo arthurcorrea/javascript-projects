@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q & A</title>
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- extra fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    
+    <section class="questions">
+      <!-- Título -->
+      <div class="title">
+        <h2>Perguntas Frequentes</h2>
+      </div>
+
+      <!-- Perguntas -->
+      <div class="section-center">
+        <!-- Início da primeira pergunta -->
+        <article class="question">
+          <!-- Título da pergunta -->
+          <div class="question-title">
+            <p>Como funciona?</p>
+            <button type="button" class="question-btn">
+              <span class="plus-icon">
+                <i class="far fa-plus-square"></i>
+              </span>
+              <span class="minus-icon">
+                <i class="far fa-minus-square"></i>
+              </span>
+            </button>
+          </div>
+          <!-- Texto da pergunta -->
+          <div class="question-text">
+            <p>
+              Originalmente, há uma class <span class="bold">'question-text'</span>  que está com <span class="bold">'display: none'</span>
+              em cada <span class="bold">&lt;div&gt;</span> de resposta.
+            </p>
+            <p>
+              Em cada <span class="bold">&lt;article&gt;</span> (pergunta) há um <span class="bold">&lt;button&gt;</span>  (+) que possui a classe 
+              <span class="bold">'question-btn'</span>, e é adicionado um addEventListener em cada botão que monitora os clicks, fazendo uma verificação para
+              analisar se o elemento clicado já possui uma classe chamada <span class="bold">'show-text'</span>, a qual faz com que o texto apareça.
+            </p>
+            <p>
+              Se não houver, ele adiciona a classe <span class="bold">'show-text'</span> ao <span class="bold">&lt;article&gt;</span>, fazendo com que esse texto
+              de resposta apareça. Se houver, ele remove a classe <span class="bold">'show-text'</span>, fazendo com que 
+              o texto se esconda.
+            </p>
+          </div>
+        </article>
+        <!-- Final da primeira pergunta -->
+
+        <!-- Início da segunda pergunta -->
+        <article class="question">
+          <!-- Título da pergunta -->
+          <div class="question-title">
+            <p>Por que esse projeto é relevante?</p>
+            <button type="button" class="question-btn">
+              <span class="plus-icon">
+                <i class="far fa-plus-square"></i>
+              </span>
+              <span class="minus-icon">
+                <i class="far fa-minus-square"></i>
+              </span>
+            </button>
+          </div>
+          <!-- Texto da pergunta -->
+          <div class="question-text">
+            <p>
+              Este projeto pode ser um estudo de base para começar 
+              a implementar <span class="bold"> SPA's (Single Page Applications)</span>
+              em projetos, além de ser um reforçador do método <span class="bold">addEventListener</span>,
+              que é um importante verificador de eventos/inputs feitos pelo usuário.
+            </p>
+          </div>
+        </article>
+        <!-- Final da segunda pergunta -->
+
+        <!-- Início da terceira pergunta -->
+        <article class="question">
+          <!-- Título da pergunta -->
+          <div class="question-title">
+            <p>O que aprendi com esse projeto?</p>
+            <button type="button" class="question-btn">
+              <span class="plus-icon">
+                <i class="far fa-plus-square"></i>
+              </span>
+              <span class="minus-icon">
+                <i class="far fa-minus-square"></i>
+              </span>
+            </button>
+          </div>
+          <!-- Texto da pergunta -->
+          <div class="question-text">
+            <li>
+              Propriedade <span class="bold">classList</span>, que permite acessar os 
+              métodos de manipulação de classes CSS com JavaScript.
+            </li>
+            <li>
+              Método <span class="bold">addEventListener</span> e como funciona sua callback.
+            </li>
+            <li>
+              Método <span class="bold">toggle</span> e sua interação com classes CSS (alterna
+              entre remover e adicionar dependendo da condição do elemento).
+            </li>
+            <li>
+              Pegar todos os elementos com determinado seletor e percorrê-los 
+              com um <span class="bold">forEach</span>.
+            </li>
+          </div>
+        </article>
+        <!-- Final da terceira pergunta -->
+
+      </div>
+    </section>
+
+    <!-- javascript -->
+    <script src="app.js"></script>
+
+  </body>
+</html>
